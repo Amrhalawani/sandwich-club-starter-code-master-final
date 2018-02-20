@@ -1,4 +1,5 @@
-# Sandwich Club Project Starter Code
+#this project for educational purposes 
+# Sandwich Club Project Starter Code 
 
 ## Project Overview
 In this project, you will complete the **Sandwich Club** app to
