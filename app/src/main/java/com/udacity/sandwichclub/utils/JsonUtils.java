@@ -21,12 +21,12 @@ public class JsonUtils {
         try {
             jsonObject = new JSONObject(json);
 
-            String placeOfOrigin = jsonObject.getString("placeOfOrigin");
-            String description = jsonObject.getString("description");
+            String placeOfOrigin = jsonObject.optString("placeOfOrigin");
+            String description = jsonObject.optString("description");
             String image = jsonObject.optString("image");
 
             JSONObject name_JO = jsonObject.getJSONObject("name");
-            String mainName = name_JO.getString("mainName");
+            String mainName = name_JO.optString("mainName");
             JSONArray alsoKnownAs_JA = name_JO.getJSONArray("alsoKnownAs");
             List<String> alsoKnownAsL = list(alsoKnownAs_JA);
 
