@@ -78,9 +78,6 @@ public class DetailActivity extends AppCompatActivity {
 
         if (!s1.isEmpty()) {
 
-//            boolean s = s1.isEmpty();
-//            boolean d = s1.trim() != null;
-//            Log.e("TAG", "populateUI: " + "s= " + s + "d= " + d);
             origin.setText(sandwich.getPlaceOfOrigin());
 
         } else if (sandwich.getPlaceOfOrigin().equals("") || TextUtils.isEmpty(s1)) {
