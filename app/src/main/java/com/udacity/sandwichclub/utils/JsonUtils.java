@@ -23,7 +23,7 @@ public class JsonUtils {
 
             String placeOfOrigin = jsonObject.getString("placeOfOrigin");
             String description = jsonObject.getString("description");
-            String image = jsonObject.getString("image");
+            String image = jsonObject.optString("image");
 
             JSONObject name_JO = jsonObject.getJSONObject("name");
             String mainName = name_JO.getString("mainName");

@@ -51,7 +51,7 @@ public class DetailActivity extends AppCompatActivity {
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
         String json = sandwiches[position];
         Sandwich sandwich = JsonUtils.parseSandwichJson(json);
-        Log.e("tag", position + " is " + json);
+        //        Log.e("tag", position + " is " + json);
         if (sandwich == null) {
             // Sandwich data unavailable
             closeOnError();
@@ -76,14 +76,14 @@ public class DetailActivity extends AppCompatActivity {
 
         String s1 = sandwich.getPlaceOfOrigin();
 
-        if (s1 != null && !s1.isEmpty()) {
+        if (!s1.isEmpty()) {
 
-            boolean s = s1.isEmpty();
-            boolean d = s1.trim() != null;
-            Log.e("TAG", "populateUI: " + "s= " + s + "d= " + d);
+//            boolean s = s1.isEmpty();
+//            boolean d = s1.trim() != null;
+//            Log.e("TAG", "populateUI: " + "s= " + s + "d= " + d);
             origin.setText(sandwich.getPlaceOfOrigin());
 
-        } else if (sandwich.getPlaceOfOrigin() == "" || TextUtils.isEmpty(s1)) {
+        } else if (sandwich.getPlaceOfOrigin().equals("") || TextUtils.isEmpty(s1)) {
             origin.setText("---");
         }
 
@@ -103,7 +103,9 @@ public class DetailActivity extends AppCompatActivity {
 
         String sandwaichIngredients = String.valueOf(sandwich.getIngredients());
         if (sandwaichIngredients != null && !sandwaichIngredients.isEmpty()) {
-            ingredients.setText(sandwaichIngredients.substring(1, sandwaichIngredients.length() - 1));
+            ingredients.setText(TextUtils.join(", ",sandwich.getIngredients()));
+           String s =  TextUtils.join(",",sandwich.getIngredients());
+          //  Log.e("TAG", "TEST textutils.join result. before was like this ("+sandwich.getIngredients()+ ") and after like this : ("+ s +")");
 
         } else {
             ingredients.setText("---");
