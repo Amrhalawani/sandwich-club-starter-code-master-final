@@ -1,6 +1,7 @@
-# this Project for Educational Purposes as A part of Udacity Google Nanodegree
 
 # Sandwich Club Project Starter Code 
+
+This Project for Educational Purposes as A part of Udacity Google Nanodegree
 
 ## Project Overview
 In this project, you will complete the **Sandwich Club** app to
